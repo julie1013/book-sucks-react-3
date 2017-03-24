@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './BookDetails.css';
 import { Reviews } from './Reviews';
 import { ToggleRemoveReAdd } from './ToggleRemoveReAdd';
-
+import { WriteReviewButton } from './WriteReviewButton';
 
 export default class BookDetails extends Component {
   render() {
@@ -10,6 +10,7 @@ export default class BookDetails extends Component {
       <div className="book-details">
         BOOK DETAILS
         <ToggleRemoveReAdd />
+        <WriteReviewButton />
         <Reviews />
       </div>
     );

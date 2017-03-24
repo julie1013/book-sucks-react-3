@@ -1,8 +1,8 @@
 .reviews {
   border: 1px solid black;
-  float: right;
   height: 450px;
+  margin: 0 auto;
   margin-right: 25px;
-  margin-top: 25px;
+  margin-top: 15px;
   width: 60%;
 }
