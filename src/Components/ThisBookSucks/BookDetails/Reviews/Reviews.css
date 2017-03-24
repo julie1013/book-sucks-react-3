@@ -1,0 +1,8 @@
+.reviews {
+  border: 1px solid black;
+  float: right;
+  height: 450px;
+  margin-right: 25px;
+  margin-top: 25px;
+  width: 60%;
+}
