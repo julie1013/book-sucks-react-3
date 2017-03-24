@@ -7,7 +7,6 @@ export default class ThisBookSucks extends Component {
   render() {
     return (
       <div className="main-app-area">
-      MAIN APP AREA
       <ToRead />
       </div>
     )
