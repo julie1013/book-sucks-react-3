@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './Landing.css';
-import SignUpIn from './SignUpIn';
+import SignUpIn from './SignUpIn/SignUpIn';
 import { ThisBookSucks } from '../../Components/ThisBookSucks';
 
 export default class Landing extends Component {
   constructor() {
     super();
-    this.state={loggedIn: true}
+    this.state={loggedIn: false}
     this.logIn=this.logIn.bind(this);
   }
 
