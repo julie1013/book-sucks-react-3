@@ -6,7 +6,7 @@ import { ThisBookSucks } from '../../Components/ThisBookSucks';
 export default class Landing extends Component {
   constructor() {
     super();
-    this.state={loggedIn: false}
+    this.state={loggedIn: true}
     this.logIn=this.logIn.bind(this);
   }
 
