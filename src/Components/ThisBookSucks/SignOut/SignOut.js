@@ -5,7 +5,7 @@ export default class SignOut extends Component {
   render() {
     return (
       <div className="sign-out">
-        SIGN OUT
+        Sign Out
       </div>
     );
   }
