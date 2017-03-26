@@ -11,7 +11,7 @@ export default class Landing extends Component {
     this.logIn=this.logIn.bind(this);
   }
 
-  logIn(){
+  logIn() {
     this.setState({loggedIn: true})
   }
 
@@ -20,8 +20,7 @@ export default class Landing extends Component {
       <div className="landing">
         {this.state.loggedIn
           ? <ThisBookSucks />
-          : <SignUpIn loginFunc={this.logIn}/>}
-          <BurningBook />
+          : <div><SignUpIn loginFunc={this.logIn}/> <BurningBook /></div>}
       </div>
     );
   }

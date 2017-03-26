@@ -1,7 +1,6 @@
-.browse {
+.sign-out {
   border: 1px solid black;
-  float: left;
+  float: right;
   height: 40px;
-  margin-left: 50px;
   width: 100px;
 }
