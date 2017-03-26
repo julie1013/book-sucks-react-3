@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Landing.css';
 import SignUpIn from './SignUpIn/SignUpIn';
 import { ThisBookSucks } from '../../Components/ThisBookSucks';
+import { BurningBook } from './BurningBook';
 
 export default class Landing extends Component {
   constructor() {
@@ -20,6 +21,7 @@ export default class Landing extends Component {
         {this.state.loggedIn
           ? <ThisBookSucks />
           : <SignUpIn loginFunc={this.logIn}/>}
+          <BurningBook />
       </div>
     );
   }
