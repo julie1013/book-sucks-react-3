@@ -1,5 +1,6 @@
 .write-review-button {
   border: 1px solid black;
+  clear: both;
   float: left;
   height: 40px;
   margin-left: 10px;

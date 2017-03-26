@@ -1,5 +1,6 @@
 .to-read {
   border: 1px solid black;
+  clear: both;
   float: left;
   height: 500px;
   margin-left: 50px;

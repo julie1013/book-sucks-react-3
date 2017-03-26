@@ -11,8 +11,8 @@ export default class ThisBookSucks extends Component {
     return (
       <div className="main-app-area">
       <Browse />
-      <SignOut />
       <ToRead />
+      <SignOut />
       <BookDetails />
       </div>
     )
