@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import './AccountSettings.css';
+import './AccountSettingsButton.css';
 
-export default class AccountSettings extends Component {
+export default class AccountSettingsButton extends Component {
   render() {
     return (
-      <div className="account-settings">
+      <div className="account-settings-button">
         Account Settings
       </div>
     );

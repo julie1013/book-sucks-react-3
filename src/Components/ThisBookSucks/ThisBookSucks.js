@@ -4,7 +4,7 @@ import { ToRead } from './ToRead';
 import { BookDetails } from './BookDetails';
 import { Browse } from './Browse';
 import { SignOut } from './SignOut';
-import { AccountSettings } from './AccountSettings';
+import { AccountSettingsButton } from './AccountSettingsButton';
 //looks for index.js in ToRead directory
 
 export default class ThisBookSucks extends Component {
@@ -13,7 +13,7 @@ export default class ThisBookSucks extends Component {
       <div className="main-app-area">
       <Browse />
       <ToRead />
-      <AccountSettings />
+      <AccountSettingsButton />
       <SignOut />
       <BookDetails />
       </div>
