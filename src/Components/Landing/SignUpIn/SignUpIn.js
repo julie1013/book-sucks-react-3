@@ -5,25 +5,38 @@ import { logIn } from './auth'
 export default class SignUpIn extends Component {
   constructor () {
     super()
+    // We are binding the CONTEXT of the handleSubmit function
+    // to be THIS instance or the SignUpIn component. That is
+    // why is is called 'this' because its refering to
+    // THIS object that whatever function we are talking about lives in
+    // .bind(<obj>) lets you change this.
     this.handleSubmit = this.handleSubmit.bind(this)
-    // telling this function that this is SignUpIn Component
-    // binds handleSubmit to SignUpIn Component (context)
   }
   handleSubmit (event) {
+    // we need to tell the browser its not 1999 anymore and there
+    // are different plans for this submit button. We call
+    // prevent default to do that.
     event.preventDefault()
-    let formPayload = {
+    // are creating a local variable named formPayload. We are setting it to
+    // be a new object with the keys 'email' and 'password' which we pull the
+    // values from the form submit event and its <input> children.
+    var formPayload = {
       email: event.target.children[0].value,
       password: event.target.children[1].value
     }
     logIn(formPayload)
     .then((response) => {
+        // the http responses code
       if (response.status === 201) {
+        // We are executing a prop passed in from our parent component. Remember,
+        // props can be functions, object, strings or numbers. I find it helpful
+        // to denote the function ones somehow with a 'somethingFunc' name.
         this.props.loginFunc()
       } else {
+        // if its a bad code.. tell the user somehow
         alert('login failed!')
       }
     })
-    // this.setState;
   }
 
   render () {
