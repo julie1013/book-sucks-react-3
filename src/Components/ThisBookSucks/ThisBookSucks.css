@@ -1,0 +1,7 @@
+.main-app-area {
+  border: 1px solid black;
+  height: 800px;
+  margin: 0 auto;
+  padding-top: 20px;
+  width: 95%;
+}

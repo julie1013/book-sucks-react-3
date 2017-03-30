@@ -1,0 +1,26 @@
+.burning-book {
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 543px;
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 496px;
+}
+
+.burning-book img {
+  border-radius: 10px 10px 0 0;
+  width: 496px;
+}
+
+.burning-book h1, .suck {
+  font-family: 'Bangers', cursive;
+}
+
+.burning-book h3 {
+  font-family: 'Open Sans', sans-serif;
+  margin-left: 10px;
+}
+
+.suck {
+  font-size: 25px;
+}

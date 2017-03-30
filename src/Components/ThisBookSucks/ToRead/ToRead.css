@@ -1,0 +1,9 @@
+.to-read {
+  border: 1px solid black;
+  clear: both;
+  float: left;
+  height: 500px;
+  margin-left: 50px;
+  margin-top: 80px;
+  width: 400px;
+}
