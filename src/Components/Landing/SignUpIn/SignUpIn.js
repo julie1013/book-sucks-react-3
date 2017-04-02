@@ -11,6 +11,7 @@ export default class SignUpIn extends Component {
     // THIS object that whatever function we are talking about lives in
     // .bind(<obj>) lets you change this.
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.state = {loginError: false}
   }
   handleSubmit (event) {
     // we need to tell the browser its not 1999 anymore and there
@@ -38,7 +39,7 @@ export default class SignUpIn extends Component {
         // to denote the function ones somehow with a 'somethingFunc' name.
       } else {
         // if its a bad code.. tell the user somehow
-        alert('login failed!')
+        this.setState({loginError: true});
       }
     })
     .catch(function(err){
@@ -61,6 +62,12 @@ export default class SignUpIn extends Component {
           <input type='password' />
           <button type='submit'>Sign In</button>
         </form>
+        {this.state.loginError
+          ? <div className="failed">
+            <h1>LOG IN FAILED!!!! YOU TOOL!</h1>
+          </div>
+          : null
+        }
       </div>
     )
   }

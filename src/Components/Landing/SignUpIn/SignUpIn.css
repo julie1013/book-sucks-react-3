@@ -6,3 +6,12 @@
   margin-top: 50px;
   width: 300px;
 }
+
+.failed {
+  height: 100px;
+  width: 300px;
+}
+
+.failed h1 {
+  color: red;
+}
