@@ -24,11 +24,14 @@ export default class SignUpIn extends Component {
       email: event.target.children[0].value,
       password: event.target.children[1].value
     }
+
+    let authenticated = false;
+
     logIn(formPayload)
     .then((response) => {
         // the http responses code
       if (response.status === 201) {
-        this.props.logInOutFunc(true);
+        authenticated = true;
         return response.json();
         // We are executing a prop passed in from our parent component. Remember,
         // props can be functions, object, strings or numbers. I find it helpful
@@ -43,7 +46,10 @@ export default class SignUpIn extends Component {
       .then(alert("The server is down"));
     })
       .then((json)=>{
-        window.localStorage.token = json.jwt;
+        if (authenticated === true){
+          window.localStorage.token = json.jwt;
+          this.props.logInOutFunc(true);
+        }
       })
   }
 
