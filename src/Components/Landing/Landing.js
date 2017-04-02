@@ -8,11 +8,18 @@ export default class Landing extends Component {
   constructor() {
     super();
     this.logInOut = this.logInOut.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
     this.state={loggedIn: false}
   }
 
   logInOut(boolean) {
     this.setState({loggedIn: boolean});
+  }
+
+  componentDidMount(){
+    if(window.localStorage.token){
+      this.logInOut(true);
+    }
   }
 
   render() {

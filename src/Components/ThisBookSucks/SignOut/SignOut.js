@@ -5,8 +5,10 @@ export default class SignOut extends Component {
 
   render() {
     return (
-      <div className="sign-out" onClick={()=>
-      this.props.logInOutFunc(false)}>
+      <div className="sign-out" onClick={()=> {
+      delete window.localStorage.token;
+      this.props.logInOutFunc(false)}
+    }>
         Sign Out
       </div>
     );

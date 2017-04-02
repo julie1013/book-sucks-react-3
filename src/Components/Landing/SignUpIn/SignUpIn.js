@@ -29,6 +29,7 @@ export default class SignUpIn extends Component {
         // the http responses code
       if (response.status === 201) {
         this.props.logInOutFunc(true);
+        return response.json();
         // We are executing a prop passed in from our parent component. Remember,
         // props can be functions, object, strings or numbers. I find it helpful
         // to denote the function ones somehow with a 'somethingFunc' name.
@@ -40,7 +41,10 @@ export default class SignUpIn extends Component {
     .catch(function(err){
       throw new Error("The server is down")
       .then(alert("The server is down"));
-    });
+    })
+      .then((json)=>{
+        window.localStorage.token = json.jwt;
+      })
   }
 
   render () {
