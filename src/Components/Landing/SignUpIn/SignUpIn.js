@@ -20,7 +20,7 @@ export default class SignUpIn extends Component {
     // are creating a local variable named formPayload. We are setting it to
     // be a new object with the keys 'email' and 'password' which we pull the
     // values from the form submit event and its <input> children.
-    var formPayload = {
+    let formPayload = {
       email: event.target.children[0].value,
       password: event.target.children[1].value
     }
@@ -28,10 +28,10 @@ export default class SignUpIn extends Component {
     .then((response) => {
         // the http responses code
       if (response.status === 201) {
+        this.props.logInOutFunc(true);
         // We are executing a prop passed in from our parent component. Remember,
         // props can be functions, object, strings or numbers. I find it helpful
         // to denote the function ones somehow with a 'somethingFunc' name.
-        this.props.loginFunc()
       } else {
         // if its a bad code.. tell the user somehow
         alert('login failed!')

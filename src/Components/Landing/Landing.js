@@ -7,20 +7,20 @@ import { BurningBook } from './BurningBook';
 export default class Landing extends Component {
   constructor() {
     super();
+    this.logInOut=this.logInOut.bind(this);
     this.state={loggedIn: false}
-    this.logIn=this.logIn.bind(this);
   }
 
-  logIn() {
-    this.setState({loggedIn: true})
+  logInOut(boolean) {
+    this.setState({loggedIn: boolean});
   }
 
   render() {
     return (
       <div className="landing">
         {this.state.loggedIn
-          ? <ThisBookSucks />
-          : <div><SignUpIn loginFunc={this.logIn}/> <BurningBook /></div>}
+          ? <ThisBookSucks logInOutFunc={this.logInOut}/>
+          : <div><SignUpIn logInOutFunc={this.logInOut}/> <BurningBook /></div>}
       </div>
     );
   }

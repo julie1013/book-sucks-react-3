@@ -14,7 +14,7 @@ export default class ThisBookSucks extends Component {
       <Browse />
       <ToRead />
       <AccountSettingsButton />
-      <SignOut />
+      <SignOut logInOutFunc={this.props.logInOutFunc}/>
       <BookDetails />
       </div>
     )
