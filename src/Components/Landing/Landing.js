@@ -7,7 +7,7 @@ import { BurningBook } from './BurningBook';
 export default class Landing extends Component {
   constructor() {
     super();
-    this.logInOut=this.logInOut.bind(this);
+    this.logInOut = this.logInOut.bind(this);
     this.state={loggedIn: false}
   }
 
