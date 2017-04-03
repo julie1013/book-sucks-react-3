@@ -4,7 +4,6 @@ import Header from './Header/Header';
 import { ToRead } from './ToRead';
 import { BookDetails } from './BookDetails';
 import { SignOut } from './SignOut';
-import { AccountSettingsButton } from './AccountSettingsButton';
 import { getUserInfo } from './getUserInfo';
 //looks for index.js in ToRead directory
 
@@ -29,7 +28,6 @@ export default class ThisBookSucks extends Component {
       <div className="main-app-area">
       <Header userName={this.state.name}/>
       <ToRead />
-      <AccountSettingsButton />
       <SignOut logInOutFunc={this.props.logInOutFunc}/>
       <BookDetails />
       </div>
