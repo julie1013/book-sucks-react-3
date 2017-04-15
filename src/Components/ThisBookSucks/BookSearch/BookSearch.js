@@ -12,7 +12,9 @@ export default class BookSearch extends Component {
       return (
         <div>
           <div>{book.title}, by {book.author}
-            <div className="add-book-btn">Add Book</div>
+            <div className="add-book-btn" onClick={()=>{
+              this.props.addBookToListFunc(book.id);
+            }}>Add Book</div>
           </div>
         </div>
       )

@@ -7,3 +7,9 @@
   margin-top: 38px;
   width: 400px;
 }
+
+.remove-book-btn {
+  border: 1px solid black;
+  margin: 0 auto;
+  width: 50%;
+}

@@ -7,7 +7,6 @@ export default class ToRead extends Component {
     super();
     this.state = {
       numBooks: undefined,
-      list: []
     }
     this.componentDidMount = this.componentDidMount.bind(this);
     this.renderToReadList = this.renderToReadList.bind(this);
@@ -21,19 +20,18 @@ export default class ToRead extends Component {
     .then((json)=>{
       this.setState({numBooks: json.info.numberOfReads})
     })
-    getList()
-    .then((response)=>{
-      return response.json();
-    })
-    .then((json)=>{
-      this.setState({list: json.books})
-    })
   }
 
   renderToReadList(){
-    return this.state.list.map((book)=>{
+    return this.props.list.map((book)=>{
       return (
-        <div key={book.id}>{book.title}, by {book.author}</div>
+        <div key={book.id}>{book.title}, by {book.author}
+          <div className="remove-book-btn" onClick={()=>{
+            this.props.removeBookFromListFunc(book.id);
+          }}>
+            REMOVE THIS SHIT
+          </div>
+        </div>
       );
     })
   }

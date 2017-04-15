@@ -31,8 +31,33 @@ function getList(){
   })
 }
 
+function addToList(payload){
+  return fetch('http://localhost:3001/api/v1/addToList', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + window.localStorage.getItem('token')
+      //make sure to have headers!!!
+    },
+    body: JSON.stringify(payload)
+  })
+}
+
+function removeFromList(id){
+  return fetch('http://localhost:3001/api/v1/removeFromList?id=' + id, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + window.localStorage.getItem('token')
+      //make sure to have headers!!!
+    }
+  })
+}
+
 export {
   getUserInfo,
   getBooks,
-  getList
+  getList,
+  addToList,
+  removeFromList
 }
