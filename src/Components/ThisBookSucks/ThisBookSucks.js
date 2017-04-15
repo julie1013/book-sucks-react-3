@@ -47,7 +47,9 @@ export default class ThisBookSucks extends Component {
       toggleBrowseFunc={this.toggleBrowse}
       />
       {this.state.showBrowse
-        ? <BookSearch/>
+        ? <BookSearch toggleBrowseFunc={this.toggleBrowse}
+                      books={this.state.books}
+          />
         : null
       }
       <ToRead />

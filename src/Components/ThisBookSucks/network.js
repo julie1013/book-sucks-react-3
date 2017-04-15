@@ -20,7 +20,19 @@ function getBooks(){
   })
 }
 
+function getList(){
+  return fetch('http://localhost:3001/api/v1/getList', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + window.localStorage.getItem('token')
+      //make sure to have headers!!!
+    }
+  })
+}
+
 export {
   getUserInfo,
-  getBooks
+  getBooks,
+  getList
 }

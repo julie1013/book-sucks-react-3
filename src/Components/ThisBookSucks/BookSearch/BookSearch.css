@@ -18,6 +18,17 @@
   min-height: 100%;
 }
 
+.close-btn {
+  border: 1px solid black;
+  float: right;
+}
+
+.add-book-btn {
+  border: 1px solid black;
+  margin: 0 auto;
+  width: 20%;
+}
+
 /*.message-adbody {
   color: #00EEFB;
 }
