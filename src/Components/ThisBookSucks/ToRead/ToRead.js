@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './ToRead.css';
-import { getUserInfo } from '../getUserInfo';
+import { getUserInfo } from '../network';
 
 export default class ToRead extends Component {
   constructor(){
@@ -22,7 +22,7 @@ export default class ToRead extends Component {
   render() {
     return (
       <div className="to-read">
-      {this.state.numBooks + ' books to read!'} 
+      {this.state.numBooks + ' books to read!'}
       </div>
     )
   }

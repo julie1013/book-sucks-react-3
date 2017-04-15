@@ -8,7 +8,7 @@ export default class Header extends Component {
   render() {
     return(
       <div className="header">
-      <Browse />
+      <Browse toggleBrowseFunc={this.props.toggleBrowseFunc}/>
       <AccountSettingsButton />
       <SignOut logInOutFunc={this.props.logInOutFunc}/>
         {this.props.userName}
