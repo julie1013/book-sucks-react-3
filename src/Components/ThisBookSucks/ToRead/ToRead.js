@@ -8,18 +8,7 @@ export default class ToRead extends Component {
     this.state = {
       numBooks: undefined,
     }
-    this.componentDidMount = this.componentDidMount.bind(this);
     this.renderToReadList = this.renderToReadList.bind(this);
-  }
-
-  componentDidMount() {
-    getUserInfo()
-    .then((response)=>{
-      return response.json();
-    })
-    .then((json)=>{
-      this.setState({numBooks: json.info.numberOfReads})
-    })
   }
 
   renderToReadList(){
@@ -39,7 +28,7 @@ export default class ToRead extends Component {
   render() {
     return (
       <div className="to-read">
-        {this.state.numBooks + ' books to read!'}
+        {this.props.list.length + ' books to read!'}
         {this.renderToReadList()}
       </div>
     )
