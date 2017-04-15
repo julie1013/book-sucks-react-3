@@ -13,3 +13,7 @@
   margin: 0 auto;
   width: 50%;
 }
+
+.book-to-read {
+  border: 1px solid black;
+}

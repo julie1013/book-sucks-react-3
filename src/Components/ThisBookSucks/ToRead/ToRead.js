@@ -14,7 +14,10 @@ export default class ToRead extends Component {
   renderToReadList(){
     return this.props.list.map((book)=>{
       return (
-        <div key={book.id}>{book.title}, by {book.author}
+        <div className="book-to-read" key={book.id} onClick={()=>{
+          this.props.setSelectedBookFunc(book.id);
+        }}>
+          {book.title}, by {book.author}
           <div className="remove-book-btn" onClick={()=>{
             this.props.removeBookFromListFunc(book.id);
           }}>
