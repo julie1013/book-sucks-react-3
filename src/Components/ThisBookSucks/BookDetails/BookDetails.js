@@ -8,8 +8,8 @@ export default class BookDetails extends Component {
   render() {
     return (
       <div className="book-details">
-        {this.props.bookSelected.title}
-        {this.props.bookSelected.synopsis}
+        <h1 className="title">{this.props.bookSelected.title}</h1>
+        <p className="synopsis">{this.props.bookSelected.synopsis}</p>
         <ToggleRemoveReAdd />
         <WriteReviewButton />
         <Reviews />

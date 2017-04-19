@@ -8,3 +8,19 @@
   margin-top: 38px;
   width: 850px;
 }
+
+.title,
+.synopsis {
+  clear: both;
+  color: #fff;
+  float: left;
+  margin-left: 10px;
+}
+
+.title {
+  margin-left: 20px;
+}
+
+.synopsis {
+  width: 300px;
+}
