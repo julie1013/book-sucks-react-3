@@ -31,7 +31,7 @@ export default class ToRead extends Component {
   render() {
     return (
       <div className="to-read">
-        {this.props.list.length + ' books to read!'}
+        <h1 className="number-books">{this.props.list.length + ' books to read!'}</h1>
         {this.renderToReadList()}
       </div>
     )
