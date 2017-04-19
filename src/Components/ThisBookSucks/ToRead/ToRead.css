@@ -1,10 +1,14 @@
 .to-read {
+  background: #0067a9;
   border: 1px solid black;
+  border-radius: 20px;
   clear: both;
+  color: #fff;
   float: left;
-  height: 500px;
+  height: 460px;
   margin-left: 50px;
   margin-top: 38px;
+  padding-top: 40px;
   width: 400px;
 }
 
@@ -15,5 +19,23 @@
 }
 
 .book-to-read {
+  background: #ffffff;
   border: 1px solid black;
+  border-radius: 10px;
+  color: #000;
+  font-weight: bold;
+  height: 40px;
+  margin: auto;
+  margin-bottom: 20px;
+  padding: 30px 0 30px 0;
+  text-align: center;
+  width: 70%;
+}
+
+.remove-book-btn {
+  background: #991111;
+  color: #fff;
+  font-weight: normal;
+  margin-top: 25px;
+  width: 60%;
 }
