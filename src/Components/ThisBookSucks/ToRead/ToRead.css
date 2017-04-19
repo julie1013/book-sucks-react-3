@@ -1,6 +1,6 @@
 .to-read {
   background: #0067a9;
-  border: 1px solid black;
+  border: 3px solid #004876;
   border-radius: 20px;
   clear: both;
   color: #fff;
@@ -21,7 +21,7 @@
 
 .book-to-read {
   background: #ffffff;
-  border: 1px solid black;
+  border: 3px solid #004876;
   border-radius: 10px;
   color: #000;
   font-weight: bold;
@@ -35,6 +35,7 @@
 
 .remove-book-btn {
   background: #991111;
+  border: 2px solid #7a0d0d;
   color: #fff;
   font-weight: normal;
   margin-top: 25px;
