@@ -11,7 +11,7 @@ export default class Header extends Component {
         <Browse toggleBrowseFunc={this.props.toggleBrowseFunc}/>
         <AccountSettingsButton />
         <SignOut logInOutFunc={this.props.logInOutFunc}/>
-          <h2>Welcome {this.props.userName}</h2>
+          <h2>Welcome {this.props.userName}!</h2>
       </div>
     );
   }
