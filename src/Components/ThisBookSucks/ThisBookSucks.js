@@ -106,6 +106,7 @@ export default class ThisBookSucks extends Component {
       />
       <BookDetails bookSelected={this.state.bookSelected}
                    list={this.state.list}
+                   removeBookFromListFunc={this.removeBookFromList}
       />
       </div>
     )
