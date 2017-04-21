@@ -104,7 +104,9 @@ export default class ThisBookSucks extends Component {
               removeBookFromListFunc={this.removeBookFromList}
               setSelectedBookFunc={this.setSelectedBook}
       />
-      <BookDetails bookSelected={this.state.bookSelected}/>
+      <BookDetails bookSelected={this.state.bookSelected}
+                   list={this.state.list}
+      />
       </div>
     )
   }

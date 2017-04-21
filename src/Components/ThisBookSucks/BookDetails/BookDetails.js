@@ -10,8 +10,13 @@ export default class BookDetails extends Component {
       <div className="book-details">
         <h1 className="title">{this.props.bookSelected.title}</h1>
         <p className="synopsis">{this.props.bookSelected.synopsis}</p>
-        <ToggleRemoveReAdd />
-        <WriteReviewButton />
+        {this.props.list.length > 0
+          ? <div>
+              <ToggleRemoveReAdd />
+              <WriteReviewButton />
+            </div>
+          : null
+        }
         <Reviews />
       </div>
     );
