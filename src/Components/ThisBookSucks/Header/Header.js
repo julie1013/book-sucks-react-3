@@ -8,10 +8,10 @@ export default class Header extends Component {
   render() {
     return(
       <div className="header">
-      <Browse toggleBrowseFunc={this.props.toggleBrowseFunc}/>
-      <AccountSettingsButton />
-      <SignOut logInOutFunc={this.props.logInOutFunc}/>
-        {this.props.userName}
+        <Browse toggleBrowseFunc={this.props.toggleBrowseFunc}/>
+        <AccountSettingsButton />
+        <SignOut logInOutFunc={this.props.logInOutFunc}/>
+          <h2>Welcome {this.props.userName}</h2>
       </div>
     );
   }

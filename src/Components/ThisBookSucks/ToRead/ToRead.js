@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './ToRead.css';
-import { getUserInfo, getList } from '../network';
+import { getList } from '../network';
 
 export default class ToRead extends Component {
   constructor(){
