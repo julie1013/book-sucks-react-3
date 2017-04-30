@@ -6,6 +6,7 @@ export default class Reviews extends Component {
     return (
       <div className="reviews">
       REVIEWS
+      {this.props.renderReviewsFunc()}
       </div>
     )
   }

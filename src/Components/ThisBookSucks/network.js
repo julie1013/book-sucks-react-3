@@ -54,10 +54,22 @@ function removeFromList(id){
   })
 }
 
+function getBookReviews(id){
+  return fetch('http://localhost:3001/api/v1/getReviews?id=' + id, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + window.localStorage.getItem('token')
+    }
+  })
+}
+
+
 export {
   getUserInfo,
   getBooks,
   getList,
   addToList,
-  removeFromList
+  removeFromList,
+  getBookReviews
 }
