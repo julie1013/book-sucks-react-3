@@ -5,7 +5,7 @@ export default class BurningBook extends Component {
   render() {
     return (
       <div className="burning-book">
-        <img src={require("../../../images/bookburning.jpg")} />
+        <img src={("../../../images/bookburning.jpg")} alt="book burning" />
         <h1>THIS BOOK SUCKS!</h1>
         <h3>Is your to-read list too long?
           <br />

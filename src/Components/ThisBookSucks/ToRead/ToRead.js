@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './ToRead.css';
-import { getList } from '../network';
 
 export default class ToRead extends Component {
   constructor(){
@@ -18,8 +17,9 @@ export default class ToRead extends Component {
           this.props.setSelectedBookFunc(book.id);
         }}>
           {book.title}, by {book.author}
-          <div className="remove-book-btn" onClick={()=>{
+          <div className="remove-book-btn" onClick={(event)=>{
             this.props.removeBookFromListFunc(book.id);
+            event.stopPropagation();
           }}>
             REMOVE THIS SHIT
           </div>

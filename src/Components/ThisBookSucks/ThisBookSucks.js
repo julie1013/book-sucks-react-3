@@ -15,7 +15,7 @@ export default class ThisBookSucks extends Component {
       books: [],
       list: [],
       showBrowse: false,
-      bookSelected: {}
+      bookSelected: undefined
     };
     this.componentDidMount = this.componentDidMount.bind(this);
     this.toggleBrowse = this.toggleBrowse.bind(this);
@@ -70,6 +70,13 @@ export default class ThisBookSucks extends Component {
   }
 
   removeBookFromList(id){
+    if(this.state.bookSelected){
+      if(id === this.state.bookSelected.id){
+        this.setState({
+          bookSelected: undefined
+        })
+      }
+    }
     removeFromList(id)
     .then((response)=>{
       return response.json();

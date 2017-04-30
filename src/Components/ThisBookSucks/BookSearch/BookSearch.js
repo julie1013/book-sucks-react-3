@@ -10,7 +10,7 @@ export default class BookSearch extends Component {
   renderBooks() {
     return this.props.books.map((book)=>{
       return (
-        <div>
+        <div key={"bookSearch" + book.id}>
           <div>{book.title}, by {book.author}
             <div className="add-book-btn" onClick={()=>{
               this.props.addBookToListFunc(book.id);
