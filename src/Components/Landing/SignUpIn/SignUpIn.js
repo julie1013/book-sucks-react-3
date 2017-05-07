@@ -56,18 +56,31 @@ export default class SignUpIn extends Component {
 
   render () {
     return (
-      <div className='temp-sign-up'>
-        <form onSubmit={this.handleSubmit}>
-          <input type='text' />
-          <input type='password' />
-          <button type='submit'>Sign In</button>
-        </form>
-        {this.state.loginError
-          ? <div className="failed">
-            <h1>LOG IN FAILED!!!! YOU TOOL!</h1>
-          </div>
-          : null
-        }
+      <div>
+        <div className="sign-in">
+          <form onSubmit={this.handleSubmit}>
+            <input type="text" />
+            <input type="password" />
+            <button type="submit">Sign In</button>
+          </form>
+          {this.state.loginError
+            ? <div className="failed">
+              <h1>LOG IN FAILED!!!! YOU TOOL!</h1>
+            </div>
+            : null
+          }
+        </div>
+        <div className="sign-up">
+          <h3>Not registered yet? Sign up!</h3>
+          <form>
+          <label for="email">Email</label>
+            <input type="text" name="email"/>
+            <input type="password" />
+            <input type="password" />
+            <input type="text" />
+            <button type="submit">Sign Up</button>
+          </form>
+        </div>
       </div>
     )
   }
