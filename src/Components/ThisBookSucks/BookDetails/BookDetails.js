@@ -4,7 +4,7 @@ import { Reviews } from './Reviews';
 import { ToggleRemoveReAdd } from './ToggleRemoveReAdd';
 import { WriteReviewButton } from './WriteReviewButton';
 import  ReviewsForm from './ReviewsForm/ReviewsForm';
-import { getBookReviews, addYourReview } from '../network';
+import { getBookReviews, deleteYourReview } from '../network';
 
 export default class BookDetails extends Component {
   constructor(){
@@ -13,6 +13,7 @@ export default class BookDetails extends Component {
     this.renderReviews = this.renderReviews.bind(this);
     this.toggleReviewsForm = this.toggleReviewsForm.bind(this);
     this.addLocalReview = this.addLocalReview.bind(this);
+    this.deleteReview = this.deleteReview.bind(this);
     this.state = {
       reviews: [],
       showReviewsForm: false
@@ -33,11 +34,35 @@ export default class BookDetails extends Component {
     }
   }
 
+  deleteReview(id){
+    deleteYourReview(id)
+    .then((response)=>{
+      return response.json()
+    })
+    .then((json)=>{
+      this.setState({
+        reviews: this.state.reviews.filter((review)=>{
+          if (json.deleted === review.id){
+            return false;
+          } else {
+            return true;
+          }
+        })
+      })
+    })
+  }
+
   renderReviews(){
     return this.state.reviews.map((review)=>{
       return(
         <div>
+          {review.username} wrote:
+          <br></br>
           {review.body}
+          <div className="edit-review-btn">EDIT REVIEW</div>
+          <div className="delete-review-btn" onClick={()=>{
+            this.deleteReview(review.id)
+          }}>DELETE REVIEW</div>
         </div>
       )
     })
