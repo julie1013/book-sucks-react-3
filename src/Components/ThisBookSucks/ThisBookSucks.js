@@ -15,7 +15,7 @@ export default class ThisBookSucks extends Component {
       books: [],
       list: [],
       showBrowse: false,
-      bookSelected: undefined
+      selectedBook: undefined
     };
     this.componentDidMount = this.componentDidMount.bind(this);
     this.toggleBrowse = this.toggleBrowse.bind(this);
@@ -70,10 +70,10 @@ export default class ThisBookSucks extends Component {
   }
 
   removeBookFromList(id){
-    if(this.state.bookSelected){
-      if(id === this.state.bookSelected.id){
+    if(this.state.selectedBook){
+      if(id === this.state.selectedBook.id){
         this.setState({
-          bookSelected: undefined
+          selectedBook: undefined
         })
       }
     }
@@ -89,7 +89,7 @@ export default class ThisBookSucks extends Component {
   setSelectedBook(id){
     this.state.list.forEach((book)=>{
       if(id === book.id){
-        this.setState({ bookSelected: book });
+        this.setState({ selectedBook: book });
       }
     })
   }
@@ -111,7 +111,7 @@ export default class ThisBookSucks extends Component {
               removeBookFromListFunc={this.removeBookFromList}
               setSelectedBookFunc={this.setSelectedBook}
       />
-      <BookDetails bookSelected={this.state.bookSelected}
+      <BookDetails selectedBook={this.state.selectedBook}
                    list={this.state.list}
                    removeBookFromListFunc={this.removeBookFromList}
       />

@@ -1,0 +1,46 @@
+.reviewform-background {
+  background-color: white;
+  border: 1px solid black;
+  text-align: center;
+  z-index: 5;
+  height: 70%;
+  width: 30vw;
+  /*margin: 0 35vw;*/
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+}
+
+.message-container {
+  background-color: #d3d3d3;
+  color: #000;
+  width: 100%;
+  min-height: 100%;
+}
+
+.reviews-container {
+  margin: auto;
+  width: 90%;
+}
+
+.close-btn {
+  border: 1px solid black;
+  float: right;
+}
+
+.add-book-btn {
+  border: 1px solid black;
+  margin: 0 auto;
+  width: 20%;
+}
+
+/*.message-adbody {
+  color: #00EEFB;
+}
+
+.fa-chevron-down {
+  color: #00EEFB;
+}
+
+.mess*/

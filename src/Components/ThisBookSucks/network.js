@@ -64,6 +64,17 @@ function getBookReviews(id){
   })
 }
 
+function addYourReview(payload){
+  return fetch('http://localhost:3001/api/v1/addReview', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + window.localStorage.getItem('token')
+    },
+    body: JSON.stringify(payload)
+  })
+}
+
 
 export {
   getUserInfo,
@@ -71,5 +82,6 @@ export {
   getList,
   addToList,
   removeFromList,
-  getBookReviews
+  getBookReviews,
+  addYourReview
 }
