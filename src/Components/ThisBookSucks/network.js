@@ -85,6 +85,17 @@ function deleteYourReview(id){
   })
 }
 
+function editYourReview(payload){
+  return fetch('http://localhost:3001/api/v1/editYourReview', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + window.localStorage.getItem('token')
+    },
+    body: JSON.stringify(payload)
+  })
+}
+
 
 export {
   getUserInfo,
@@ -94,5 +105,6 @@ export {
   removeFromList,
   getBookReviews,
   addYourReview,
-  deleteYourReview
+  deleteYourReview,
+  editYourReview
 }

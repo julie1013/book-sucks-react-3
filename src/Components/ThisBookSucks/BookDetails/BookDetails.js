@@ -4,7 +4,8 @@ import { Reviews } from './Reviews';
 import { ToggleRemoveReAdd } from './ToggleRemoveReAdd';
 import { WriteReviewButton } from './WriteReviewButton';
 import  ReviewsForm from './ReviewsForm/ReviewsForm';
-import { getBookReviews, deleteYourReview } from '../network';
+import EditReviewForm from './EditReviewForm/EditReviewForm';
+import { getBookReviews, deleteYourReview, editYourReview } from '../network';
 
 export default class BookDetails extends Component {
   constructor(){
@@ -14,9 +15,12 @@ export default class BookDetails extends Component {
     this.toggleReviewsForm = this.toggleReviewsForm.bind(this);
     this.addLocalReview = this.addLocalReview.bind(this);
     this.deleteReview = this.deleteReview.bind(this);
+    this.editReview = this.editReview.bind(this);
+    this.toggleEditForm = this.toggleEditForm.bind(this);
     this.state = {
       reviews: [],
-      showReviewsForm: false
+      showReviewsForm: false,
+      selectedReview: false
     }
   }
 
@@ -52,6 +56,34 @@ export default class BookDetails extends Component {
     })
   }
 
+  toggleEditForm(review){
+    this.setState({
+      selectedReview: review
+    })
+  }
+
+  editReview(id, body){
+    editYourReview({
+      id: id,
+      body: body
+    })
+    .then((response)=>{
+      return response.json()
+    })
+    .then((json)=>{
+      let newReviewArray = [];
+      this.state.reviews.forEach((review)=>{
+        if(review.id === json.review.id){
+          review.body = json.review.body;
+        }
+        newReviewArray.push(review);
+        this.setState({
+          reviews: newReviewArray
+        })
+      })
+    })
+  }
+
   renderReviews(){
     return this.state.reviews.map((review)=>{
       return(
@@ -59,7 +91,9 @@ export default class BookDetails extends Component {
           {review.username} wrote:
           <br></br>
           {review.body}
-          <div className="edit-review-btn">EDIT REVIEW</div>
+          <div className="edit-review-btn" onClick={()=>{
+            this.toggleEditForm(review);
+          }}>EDIT REVIEW</div>
           <div className="delete-review-btn" onClick={()=>{
             this.deleteReview(review.id)
           }}>DELETE REVIEW</div>
@@ -107,6 +141,14 @@ export default class BookDetails extends Component {
           ? <ReviewsForm toggleReviewsFormFunc={this.toggleReviewsForm}
                           selectedBook={this.props.selectedBook}
                           addLocalReviewFunc={this.addLocalReview}
+          />
+          : null
+        }
+        {this.state.selectedReview
+          ? <EditReviewForm
+            toggleEditFormFunc={this.toggleEditForm}
+            editReviewFunc={this.editReview}
+            selectedReview={this.state.selectedReview}
           />
           : null
         }
